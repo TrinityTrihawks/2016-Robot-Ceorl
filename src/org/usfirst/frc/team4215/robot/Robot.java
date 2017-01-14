@@ -80,7 +80,9 @@ public class Robot extends IterativeRobot {
 	public void teleopPeriodic() {
 		//86-87 Gets position of left joystick and sets it to wheelPower
 		GenericHID.Hand leftJoystick = GenericHID.Hand.kLeft;
-		double wheelPower = driveJoystick.getY(leftJoystick);
+		double SetAllWheels = driveJoystick.getY(leftJoystick);
+		
+		
 		
 		GenericHID.Hand rightJoystick = GenericHID.Hand.kRight;
 		double armPower = armJoystick.getY(rightJoystick);
