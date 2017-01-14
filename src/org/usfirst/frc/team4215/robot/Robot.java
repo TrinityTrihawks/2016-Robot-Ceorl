@@ -19,11 +19,6 @@ public class Robot extends IterativeRobot {
 	final String customAuto = "My Auto";
 	String autoSelected;
 	SendableChooser<String> chooser = new SendableChooser<>();
-	//23-26 declare Victors
-	Victor flWheel = new Victor(3);
-	Victor frWheel = new Victor(0);
-	Victor blWheel = new Victor(1);
-	Victor brWheel = new Victor(2);
 	//28 declares joystick
 	Joystick driveJoystick = new Joystick(1);
 	//30-31 declare arm Victors (which I think will always run together)
@@ -86,18 +81,6 @@ public class Robot extends IterativeRobot {
 		//86-87 Gets position of left joystick and sets it to wheelPower
 		GenericHID.Hand leftJoystick = GenericHID.Hand.kLeft;
 		double wheelPower = driveJoystick.getY(leftJoystick);
-		
-		//91-94 sets min/max wheel power to -1 and 1
-		if (wheelPower > 1) {
-			wheelPower = 1;
-		} else if (wheelPower < -1) {
-			wheelPower = -1;
-		}
-		//97-100 sets wheels to left joystick position
-		flWheel.set(wheelPower);
-		frWheel.set(wheelPower);
-		blWheel.set(wheelPower);
-		brWheel.set(wheelPower);
 		
 		GenericHID.Hand rightJoystick = GenericHID.Hand.kRight;
 		double armPower = armJoystick.getY(rightJoystick);
